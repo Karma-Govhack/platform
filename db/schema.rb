@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729014528) do
+ActiveRecord::Schema.define(version: 20170729045008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20170729014528) do
     t.string  "description"
     t.decimal "hours"
     t.integer "amount_workers"
-    t.decimal "lat"
-    t.decimal "long"
+    t.decimal "latitude"
+    t.decimal "longtitude"
     t.integer "Charity_id"
     t.index ["Charity_id"], name: "index_Job_on_Charity_id", using: :btree
   end
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20170729014528) do
   create_table "Volunteer", force: :cascade do |t|
     t.string  "first_name"
     t.string  "last_name"
-    t.decimal "lat"
-    t.decimal "long"
+    t.decimal "latitude"
+    t.decimal "longtitude"
     t.text    "note"
     t.decimal "hours"
     t.string  "phone"
