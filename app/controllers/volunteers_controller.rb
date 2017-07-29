@@ -4,6 +4,9 @@ class VolunteersController < ApplicationController
   # GET /volunteer
   def index
     @volunteer = Volunteer.all
+    @volunteer = @volunteer.map do |v|
+      build_skills(v)
+    end
     render json: @volunteer, methods: [:skills], status: :ok
   end
 
@@ -39,12 +42,17 @@ class VolunteersController < ApplicationController
 
   def set_volunteer
     @volunteer = Volunteer.find(params[:id])
-    @volunteer.skills =  @volunteer.VolunteerAndSkills.map do |s|
-      skill = Hash.new
-      skill_row = Skill.find(s.Skill_id)
-      skill['id'] = skill_row.id
-      skill['name'] = skill_row.name 
-      skill
-    end
+    build_skills(@volunteer)
+  end
+
+  def build_skills(vol)
+      vol.skills =  vol.VolunteerAndSkills.map do |s|
+        skill = Hash.new
+        skill_row = Skill.find(s.Skill_id)
+        skill['id'] = skill_row.id
+        skill['name'] = skill_row.name 
+        skill
+      end
+      vol
   end
 end
