@@ -1,5 +1,5 @@
 class Volunteer < ApplicationRecord
     self.table_name = 'Volunteer'
-    has_many :skills, through: :VolunteerAndSkills
-    has_many :sector, through: :SectorAndVolunteer
+    has_many :VolunteerAndSkills, foreign_key: "Volunteer_id"
+    has_many :Sector, through: :SectorAndVolunteer
 end
