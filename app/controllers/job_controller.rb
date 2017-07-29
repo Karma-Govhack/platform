@@ -40,4 +40,5 @@ class JobController < ApplicationController
   def set_job
     @job = Job.find(params[:id])
   end
+
 end
