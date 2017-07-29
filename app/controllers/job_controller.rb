@@ -59,7 +59,7 @@ class JobController < ApplicationController
   end
 
   def deg2rad(deg)
-    deg * (Math.PI/180)
+    deg * (Math::PI/180)
   end
 
 end
