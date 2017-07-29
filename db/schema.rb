@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729002320) do
+ActiveRecord::Schema.define(version: 20170729014528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "Charity", force: :cascade do |t|
+    t.string  "name"
+    t.string  "address"
+    t.integer "Sector_id"
+    t.index ["Sector_id"], name: "index_Charity_on_Sector_id", using: :btree
+  end
+
+  create_table "Job", force: :cascade do |t|
+    t.string  "name"
+    t.string  "description"
+    t.decimal "hours"
+    t.integer "amount_workers"
+    t.decimal "lat"
+    t.decimal "long"
+    t.integer "Charity_id"
+    t.index ["Charity_id"], name: "index_Job_on_Charity_id", using: :btree
+  end
+
+  create_table "JobsAndSkills", force: :cascade do |t|
+    t.integer "Skill_id"
+    t.integer "Job_id"
+  end
+
+  create_table "Sector", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "SectorAndVolunteer", force: :cascade do |t|
+    t.integer "Volunteer_id"
+    t.integer "Sector_id"
+  end
 
   create_table "Skills", force: :cascade do |t|
     t.string "name"
@@ -35,6 +67,10 @@ ActiveRecord::Schema.define(version: 20170729002320) do
     t.integer "Skill_id"
   end
 
+  add_foreign_key "JobsAndSkills", "\"Job\"", column: "Job_id"
+  add_foreign_key "JobsAndSkills", "\"Skills\"", column: "Skill_id"
+  add_foreign_key "SectorAndVolunteer", "\"Sector\"", column: "Sector_id"
+  add_foreign_key "SectorAndVolunteer", "\"Volunteer\"", column: "Volunteer_id"
   add_foreign_key "VolunteerAndSkills", "\"Skills\"", column: "Skill_id"
   add_foreign_key "VolunteerAndSkills", "\"Volunteer\"", column: "Volunteer_id"
 end
