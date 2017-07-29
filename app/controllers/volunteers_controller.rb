@@ -1,5 +1,5 @@
 class VolunteersController < ApplicationController
-  before_action :set_todo, only: [:show, :update, :destroy]
+  before_action :set_volunteer, only: [:show, :update, :destroy]
 
   # GET /volunteer
   def index
@@ -9,7 +9,7 @@ class VolunteersController < ApplicationController
 
   # POST /volunteer
   def create
-    @todo = Volunteer.create!(volunteer_params)
+    @volunteer = Volunteer.create!(volunteer_params)
     render json: @volunteer, status: :ok
   end
 
@@ -20,13 +20,13 @@ class VolunteersController < ApplicationController
 
   # PUT /volunteer/:id
   def update
-    @todo.update(volunteer_params)
+    @volunteer.update(volunteer_params)
     head :no_content
   end
 
   # DELETE /volunteer/:id
   def destroy
-    @todo.destroy
+    @volunteer.destroy
     head :no_content
   end
 
@@ -38,6 +38,6 @@ class VolunteersController < ApplicationController
   end
 
   def set_volunteer
-    @todo = Volunteer.find(params[:id])
+    @volunteer = Volunteer.find(params[:id])
   end
 end

@@ -1,0 +1,2 @@
+class SectorController < ApplicationController
+end
