@@ -10,9 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170729002320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "Skills", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "Volunteer", force: :cascade do |t|
+    t.string  "first_name"
+    t.string  "last_name"
+    t.decimal "lat"
+    t.decimal "long"
+    t.text    "note"
+    t.decimal "hours"
+    t.string  "phone"
+    t.string  "email"
+  end
+
+  create_table "VolunteerAndSkills", force: :cascade do |t|
+    t.integer "Volunteer_id"
+    t.integer "Skill_id"
+  end
+
+  add_foreign_key "VolunteerAndSkills", "\"Skills\"", column: "Skill_id"
+  add_foreign_key "VolunteerAndSkills", "\"Volunteer\"", column: "Volunteer_id"
 end
