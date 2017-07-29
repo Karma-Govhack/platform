@@ -4,7 +4,7 @@ class VolunteersController < ApplicationController
   # GET /volunteer
   def index
     @volunteer = Volunteer.all
-    render json: @volunteer, status: :ok
+    render json: @volunteer, methods: [:skills], status: :ok
   end
 
   # POST /volunteer
