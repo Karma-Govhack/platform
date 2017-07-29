@@ -1,5 +1,5 @@
 class JobController < ApplicationController
-  before_action :set_job, only: [:show, :update, :destroy]
+  before_action :set_job, only: [:show]
 
   # GET /job?user_id=?
   def index
@@ -11,27 +11,9 @@ class JobController < ApplicationController
     render json: @job, status: :ok
   end
 
-  # POST /job
-  def create
-    @job = Job.create!(job_params)
-    render json: @job, status: :ok
-  end
-
   # GET /job/:id
   def show
     render json: @job, status: :ok
-  end
-
-  # PUT /job/:id
-  def update
-    @job.update(job_params)
-    head :no_content
-  end
-
-  # DELETE /job/:id
-  def destroy
-    @job.destroy
-    head :no_content
   end
 
   private

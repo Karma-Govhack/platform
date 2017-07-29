@@ -10,27 +10,9 @@ class VolunteersController < ApplicationController
     render json: @volunteer, methods: [:skills], status: :ok
   end
 
-  # POST /volunteer
-  def create
-    @volunteer = Volunteer.create!(volunteer_params)
-    render json: @volunteer, status: :ok
-  end
-
   # GET /volunteer/:id
   def show
     render json: @volunteer, methods: [:skills], status: :ok
-  end
-
-  # PUT /volunteer/:id
-  def update
-    @volunteer.update(volunteer_params)
-    head :no_content
-  end
-
-  # DELETE /volunteer/:id
-  def destroy
-    @volunteer.destroy
-    head :no_content
   end
 
   private
