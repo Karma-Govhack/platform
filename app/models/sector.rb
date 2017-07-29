@@ -1,3 +1,3 @@
-class Skill < ApplicationRecord
-    has_many :volunteers, through: :VolunteerAndSkills
+class Sector < ApplicationRecord
+    self.table_name = 'Sector'
 end
