@@ -1,4 +1,4 @@
-class CharityApiController < ApplicationController
+class CharityapiController < ApplicationController
   before_action :set_charity, only: [:show]
 
   # GET /charity
