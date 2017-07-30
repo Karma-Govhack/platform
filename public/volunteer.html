@@ -21,8 +21,6 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-<!-- <script src="https://code.jquery.com/jquery.min.js"></script> -->
 <nav>
   <ul class="nav nav-tabs">
     <li role="presentation" >
@@ -38,8 +36,8 @@
     <div class="col-sm-4">
       <div class="profile-section bio">
         <div class="section-title">
-          <h2>Lucas The Great</h2>
-          <h4>50 Karma</h4>
+          <h2 id="userName"></h2>
+          <h4 id="userHours"></h4>
         </div>
         <div class="profile-image">
           <img class="circle" src="assets/img/user-placeholder.png" height="120px" />
@@ -51,9 +49,7 @@
             </h2>
           </div>
           <div class="panel-body">
-            <p>
-              I am a volunteer and I am awesome. I love to volunteer and help everyone.
-            </p>
+            <p id="aboutMe"></p>
           </div>
           <div class="panel-heading">
             <h2 class="panel-title">
@@ -61,8 +57,8 @@
             </h2>
           </div>
           <div class="panel-body">
-            <p>
-              Ponsonby, Auckland
+            <p id="address">
+
             </p>
           </div>
           <div class="panel-heading">
@@ -71,9 +67,7 @@
             </h2>
           </div>
           <div class="panel-body">
-            <p>
-              Gardening, Making coffee, Painting houses
-            </p>
+            <ul id="skill"></ul>
           </div>
           <div class="panel-heading">
             <h2 class="panel-title">
@@ -95,43 +89,39 @@
       </div>
       <div class="panel">
         <div class="panel-heading">
-          <h2 class="panel-title">A Job For You</h2>
+          <h2 class="panel-title" id="name"></h2>
         </div>
         <div class="panel-body">
-          <p>
-            This is a job description. Ground control to major tom. Ground control to major tom. Take your protein pills and put your helmet on.
-          </p>
-          <p>
-            Job location
-          </p>
-          <p>
-            Skills needed
-          </p>
-          <p>
-            Number of hours
-          </p>
-          <p>
-            Number of volunteers needed
-          </p>
-        </div>
-      </div>
+          <p id="description"></p>
+          <p id="job_address">
 
-    </div>
-    <div class="col-sm-4 profile-section card-list">
-      <div class="section-title">
-        <h2>Charities</h2>
-      </div>
-      <div class="panel">
-        <div class="panel-heading">
-          <h2 class="panel-title">Save Some Cats</h2>
+          </p>
+          <p id="skillsNeeded">
+            Gardening, Arts, Children and Family, Finance
+          </p>
+          <p id="hours"></p>
+          <p id="amount_workers"></p>
         </div>
-        <div class="panel-body">
-          <p>
-            This is a charity organisation that you might be interested in because it matches your interests.
-          </p>
-          <p>
-            Click here to contact this charity.
-          </p>
+      </div>
+    </div>
+
+    <div id="charity">
+      <div class="col-sm-4 profile-section card-list">
+        <div class="section-title">
+          <h2>Charities</h2>
+        </div>
+        <div class="panel">
+          <div class="panel-heading">
+            <h2 class="panel-title">Save Some Cats</h2>
+          </div>
+          <div class="panel-body">
+            <p>
+              This is a charity organisation that you might be interested in because it matches your interests.
+            </p>
+            <p>
+              Click here to contact this charity.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -139,7 +129,8 @@
   </div> <!-- End row -->
 </div> <!-- End container -->
 
-  <script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+  <script src="javascripts/vendor/jquery-1.11.2.min.js"></script>
         <script src="javascripts/main.js"></script>
+        <script src="javascripts/external.js"></script>
     </body>
 </html>

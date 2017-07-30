@@ -23,7 +23,7 @@
         <div id="mainDiv">
           <div class="homepage-hero-module">
             <div class="video-container">
-              <div class="filter"></div>
+              <!-- <div class="filter"></div> -->
                 <video autoplay loop class="fillWidth">
                     <source src="assets/vid/MP4/Fade-To-Black.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
                     <source src="assets/vid/WEBM/Fade-To-Black.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
@@ -42,45 +42,71 @@
                 </h1>
               </div>
               <div class="panel-body">
-                <div class="flex-container">
+                <div class="flex-container" id="homepageOptions">
                   <div class="flex-item text-center">
                     <h3>Volunteer</h3>
                     <div class="btns">
                       <a class="btn btn-login" href="volunteer.html">Sign In</a>
-                      <button class="btn btn-register" data-toggle="modal" data-target="#myModal">Register</button>
+                      <button class="btn btn-register" id="volunteerReg" onclick="toggleVolunteerForm()">Register</button>
                     </div>
                   </div>
                   <div class="flex-item text-center">
                     <h3>Charity</h3>
                     <div class="btns">
                       <a class="btn btn-login" href="charity.html">Sign In</a>
-                      <button class="btn btn-register" data-toggle="modal" data-target="#myModal">Register</button>
+                      <button class="btn btn-register" id="charityReg" onclick="toggleCharityForm()">Register</button>
                     </div>
                   </div>
                 </div>
 
-                <div class="flex-container hidden" id="volunteerReg">
+                <div class="flex-container hidden" id="volunteerRegForm">
                   <form>
                     <div class="form-group form-inline">
                       <label for="userFirstName">First Name</label>
                       <input type="text" class="form-control text" placeholder="Your name" id="userFirstName">
-                    </div>
-                    <div class="form-group form-inline">
                       <label for="userLastName">Last Name</label>
                       <input type="text" class="form-control text" placeholder="Your last name" id="userLastName">
+                    </div>
+                    <div class="form-group form-inline">
+                      <label for="userEmail">Email</label>
+                      <input type="email" class="form-control email" placeholder="Your email" id="userEmail">
+                      <label for="userTel">Phone No.</label>
+                      <input type="number" class="form-control number" placeholder="Your contact number" id="userTel">
                     </div>
                     <div class="form-group form-inline">
                       <label for="userAddress">Address</label>
                       <input type="text" class="form-control text" placeholder="Your address" id="userAddress">
                     </div>
-                    <div class="form-group form-inline">
-                      <label for="userEmail">Email</label>
-                      <input type="email" class="form-control email" placeholder="Your email" id="userEmail">
-                    </div>
+                    <button class="btn btn-primary" id="goBack" onclick="backToHome('volunteerRegForm')">Go back</button>
+
                     <!-- <div class="btn-group">
                       <button type="submit" class="btn btn-primary">Sign In</button>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register here...</button>
                     </div> -->
+                  </form>
+                </div>
+
+                <div class="flex-container hidden" id="charityRegForm">
+                  <form>
+                    <div class="form-group form-inline">
+                      <label for="charityName">Name of Organisation</label>
+                      <input type="text" class="form-control text" placeholder="Your organisation" id="charityName">
+                      <label for="charityRegNo">Registration number</label>
+                      <input type="number" class="form-control number" placeholder="Registration number" id="charityRegNo">
+                    </div>
+                    <div class="form-group form-inline">
+                      <label for="charityEmail">Organisation Email</label>
+                      <input type="email" class="form-control email" placeholder="Contact" id="charityEmail">
+                      <label for="charityTel">Phone No.</label>
+                      <input type="number" class="form-control number" placeholder="Your organisation number" id="charityTel">
+                    </div>
+                    <div class="form-group form-inline">
+                      <label for="charityAddress">Address</label>
+                      <input type="text" class="form-control text" placeholder="Your organisation address" id="charityAddress">
+                    </div>
+
+                      <button class="btn btn-primary" id="goBack" onclick="backToHome('charityRegForm')">Go back</button>
+
                   </form>
                 </div>
 
@@ -119,8 +145,9 @@
           </div>
 
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
-        <script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="javascripts/vendor/jquery-1.11.2.min.js"></script>
 
         <script src="javascripts/main.js"></script>
+        <script src="javascripts/homepage.js"></script>
     </body>
 </html>

@@ -8990,14 +8990,6 @@ p {
   position: absolute;
 }
 
-/* line 54, ../sass/_index.scss */
-.video-container .filter {
-  z-index: 100;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-}
-
 /* line 60, ../sass/_index.scss */
 .video-container video {
   position: absolute;
