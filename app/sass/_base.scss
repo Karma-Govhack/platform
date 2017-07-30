@@ -1,0 +1,120 @@
+html {
+
+  color: $almostBlack;
+  @include box-sizing(border-box);
+  font: normal normal 300 15px/1.4em $mainFont;
+}
+*,
+*:before,
+*:after {
+
+  @include box-sizing(inherit);
+}
+h1, h2, h3, h4, p {
+  color: $almostBlack;
+}
+h1 {
+
+  font: normal normal 800 2rem/1.4em $mainFont;
+}
+h2 {
+
+  font: normal normal 600 1.8rem/1.4em $mainFont;
+}
+h3 {
+
+  font: normal normal 600 1.6rem/1.4em $mainFont;
+}
+h4 {
+
+  font: normal normal 600 1.4rem/1.4em $mainFont;
+}
+p {
+
+  font: inherit;
+}
+.nav {
+
+  background-color: $veryOrange;
+}
+.profile-section {
+
+  @include display-flex;
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  @include align-items(center);
+  > * {
+
+    @include flex(1);
+  }
+}
+.section-title {
+
+  padding: 15px;
+  h2 {
+
+    font-weight: 800;
+  }
+  h2, h4 {
+
+    text-align: center;
+  }
+  h4 {
+
+    color: $veryOrange;
+  }
+}
+.profile-image {
+
+  padding: 20px 0;
+  img {
+
+    border: 1px solid $oliveGray;
+    @include border-radius(50%);
+  }
+}
+.panel {
+  > .panel-body {
+
+    font: normal normal 300 15px/1.4em $mainFont;
+  }
+  > .panel-heading  {
+
+    border-color: transparent;
+    h2 {
+
+      font: normal normal 300 1.3rem/1.4em $mainFont;
+    }
+  }
+}
+.card-list {
+  > .panel {
+    > div {
+
+      padding: 12px 18px;
+    }
+    .panel-heading {
+
+      background-color: $seaBlue;
+      h2 {
+
+        color: $white;
+      }
+    }
+    .panel-body {
+
+      border: 1px solid #B4B8AB;
+      border-top-color: transparent;
+      margin-top: -1px;
+    }
+  }
+}
+.bio {
+  > .panel {
+
+    max-width: 90%;
+    .panel-heading h2 {
+      font-weight: 600;
+    }
+  }
+}
